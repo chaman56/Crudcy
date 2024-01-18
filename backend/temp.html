@@ -1,0 +1,30 @@
+<script>
+  function generateFibonacci(num1, num2, n) {
+    const fibonacciNumbers = [num1, num2];
+    while (fibonacciNumbers.length < n) {
+      const nextNumber = fibonacciNumbers[fibonacciNumbers.length - 1] + fibonacciNumbers[fibonacciNumbers.length - 2];
+      fibonacciNumbers.push(nextNumber);
+    }
+    return fibonacciNumbers;
+  }
+  
+  // Input: Take two integers as input
+  let num1, num2;
+  
+  try {
+    num1 = parseInt(prompt("Enter the first number: "));
+    num2 = parseInt(prompt("Enter the second number: "));
+  } catch (error) {
+    console.log("Invalid input. Please enter integers.");
+    return;
+  }
+  
+  // Generate the first 10 Fibonacci numbers starting from num1 and num2
+  const fibonacciNumbers = generateFibonacci(num1, num2, 10);
+  
+  // Print the result
+  console.log(`The first 10 Fibonacci numbers starting from ${num1} and ${num2} are:`);
+  for (const number of fibonacciNumbers) {
+    console.log(number);
+  }
+</script>

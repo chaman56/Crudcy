@@ -1,0 +1,110 @@
+.task-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid gray
+}
+
+.task-list>li {
+    display: flex;
+    line-height: 1.6;
+    border-bottom: 1px solid gray;
+    overflow: hidden
+}
+
+.task-list>li:hover {
+    background-color: rgb(209, 209, 209)
+}
+
+.dark{
+    .task-list>li:hover {
+        background-color: rgb(56, 56, 56)
+    }
+}
+
+
+.task-list>li:before {
+    display: inline-block;
+    width: 44.8px;
+    text-align: center;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto
+}
+
+.task-list.headless>li:hover {
+    background-color: initial
+}
+
+.task-list.contest>li.task:before {
+    display: none
+}
+
+.task-list>.text:before {
+    content: "\f129"
+}
+
+.task-list>.link:before {
+    content: "\f0c1"
+}
+
+.task-list>.task:before {
+    content: "\f15c"
+}
+
+.task-list a,.task-list div {
+    flex-grow: 1
+}
+
+.task-list b {
+    display: inline-block;
+    width: 44.8px;
+    text-align: center
+}
+
+.task-list>li>span {
+    margin-left: 6.4px
+}
+
+.task-list>li>span:not(.task-score):last-child {
+    margin-right: 6.4px
+}
+
+.task-list .task-score {
+    float: right;
+    clear: right;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px
+}
+
+.task-list .task-score.icon {
+    font-size: 1em;
+    line-height: 1.6
+}
+
+.task-list .details {
+    font-size: .8em
+}
+
+.task-list .details>span,.task-list .details>a {
+    display: inline-block;
+    min-width: 5em
+}
+
+.task-list .detail {
+    font-size: .8em;
+    line-height: 2;
+    opacity: 0.6
+}
+
+
+.task-list-notice {
+    margin-top: -0.5em
+}

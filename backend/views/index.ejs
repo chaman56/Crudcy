@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C++ Code Runner</title>
+</head>
+<body>
+    <h1>Enter C++ Code and Input</h1>
+    <form id="cppForm">
+        <textarea id="cppCode" placeholder="Enter C++ code here"></textarea>
+        <textarea id="inputData" placeholder="Enter input data here"></textarea>
+        <button type="button" onclick="runCode()">Run Code</button>
+    </form>
+    <pre id="output"></pre>
+
+    <script>
+        async function runCode() {
+            const cppCode = document.getElementById('cppCode').value;
+            const inputData = document.getElementById('inputData').value;
+
+            const requestBody = {
+                cppCode: cppCode,
+                input: inputData
+            };
+
+            const response = await fetch('/runcode', {
+                method: 'POST',
+                body: JSON.stringify(requestBody)
+            });
+
+            const outputText = await response.text();
+            document.getElementById('output').textContent = outputText;
+        }
+    </script>
+</body>
+</html>

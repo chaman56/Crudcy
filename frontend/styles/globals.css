@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 246, 248, 250;
+  --background-end-rgb: 255, 255, 255;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+:root {
+  /* Your default theme */
+  --background: white;
+  --foreground: black;
+}
+
+[data-theme='dark'] {
+  --background: black;
+  --foreground: white;
+}
+
+body {
+  width: 100%;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+
+
+
+.wrapper{
+  padding: 0 8px;
+  display: flex;
+  height: inherit;
+  /* Original height is set under UseEffect */
+  padding-bottom: 8px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.sidepan{
+  min-width: 160px;
+  position: relative;
+  max-width: 160px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#input{
+  border: 1px solid gainsboro;
+}
+#input:focus{
+  outline: none;
+}
+
+
+#filename{
+  max-width: inherit;
+  width: inherit;
+}
+
+.codepan{
+  /* width: calc(100% - 170px); */
+}
+
+.terminal{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.codeEditor {
+  height: calc(100% - 55px);
+}
+
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+.blue_gradient {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+.button{
+  border-radius: 25px;
+  background: rgb(91, 173, 255);
+  padding: 10px 20px;
+  box-shadow: 0  0 10px -2px rgb(137, 216, 255);
+}
+.button:hover{
+  padding: 12px 22px;
+}
+
+#output2{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+.executiontime{
+  color:rgb(0, 0, 164); font-size:.7rem; border-top:1px solid gainsboro;
+}
+.executiontime span{
+  color:rgb(0, 93, 28);
+}
+
+.resultantOutput{
+  color : green; font-family: 'Courier New', Courier, monospace; font-weight: lighter;
+}
+
+.resultantError{
+  color:red; border-top:1px solid gainsboro; font-family: 'Courier New', Courier, monospace;
+}
+
+.dark .executiontime{
+  color:rgb(214, 214, 255); font-size:.7rem; border-top:1px solid gainsboro;
+}
+.dark .executiontime span{
+  color:rgb(219, 255, 219);
+}
+
+.dark .resultantOutput{
+  color : rgb(0, 255, 0); font-family: 'Courier New', Courier, monospace; font-weight: lighter;
+}
+.dark .resultantError{
+  color:rgb(255, 11, 11); border-top:1px solid gainsboro; font-family: 'Courier New', Courier, monospace;
+}
+
+body ::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+} 
+body ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+body  ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+body  ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.practice-container .boxes{
+  height: 70px;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ;
+}

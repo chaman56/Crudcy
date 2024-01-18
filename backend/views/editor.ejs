@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Coding site</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form">
+      <div>C++ Online Compiler</div>
+      <textarea name="code" id="code" cols="40" rows="20" placeholder="Write your code here..." required></textarea>
+      <textarea name="input" id="input" cols="20" rows="6" placeholder="Inputs"></textarea>
+      <textarea name="output" id="output" cols="20" rows="6" placeholder="Outputs"></textarea>
+      <button class="button" onclick="submit()">Submit</button>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  $(document).ready(function(){
+    $("#output").hide();
+  })
+  function submit(){
+    $("#output").text("Running...");
+    $.post(
+      "/run/cpp",
+      {
+        code : $("#code").val(),
+        input: $("#input").val()
+      },
+      function(data) {
+        $("#output").show();
+        if(data.error){
+          $("#output").text(data.error);
+        }else{
+          $("#output").text(data.output);
+        }
+      }
+    )
+  }
+</script>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  } 
+  .container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .form{
+    width: 70%;
+  }
+  .form input{
+    width: calc(100% - 80px);
+    padding: 8px;
+    margin: 7px 0;
+    
+  }
+  .form .button{
+    padding: 8px;
+    background-color: greenyellow;
+    color: rgb(91, 255, 129);
+    cursor: pointer;
+  }
+  textarea{
+    padding: 5px;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+  #code{
+    background-color: black;
+    color : white;
+  }
+</style>
