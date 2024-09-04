@@ -1,5 +1,5 @@
-# Crudcy  
-### A platform where users can compete in coding contest, proctice problems and developement skills, challenge freinds for one on one matches and do many more things.  
+# Crudcy  (Online coding compiler)
+### A platform where users can compete in coding contest, practice problems, challenge freinds for one on one matches and do many more things.  
 
 ## Pictures of the Website.  
 
